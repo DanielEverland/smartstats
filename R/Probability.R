@@ -15,5 +15,5 @@ hyperMean <- function(a, N, n) {
 #' @param n amount of draws
 #' @export
 hyperVar <- function(a, N, n) {
-  n * ((a(N - a)/N^2)) * ((N - n)/(N - 1))
+  n * ((a*(N - a)/N^2)) * ((N - n)/(N - 1))
 }
