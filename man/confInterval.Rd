@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{confInterval}
 \alias{confInterval}
-\title{Confidence interval for the mean of one sample}
+\title{Confidence interval}
 \usage{
 confInterval(x, alpha = 0.05)
 }
