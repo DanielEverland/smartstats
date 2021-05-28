@@ -2,9 +2,9 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{confInterval}
 \alias{confInterval}
-\title{Confidence interval for one sample}
+\title{One sample confidence interval for the mean}
 \usage{
-confInterval(x = NULL, alpha = 0.05)
+confInterval(x, alpha = 0.05)
 }
 \arguments{
 \item{x}{Vector of data}
