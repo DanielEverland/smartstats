@@ -201,7 +201,7 @@ beta1hat = function(x, y) {
 #' @return The estimator beta0 hat
 #' @export
 beta0hat = function(x, y) {
-  mean(y) - b1hat(x,y) * mean(x)
+  mean(y) - beta1hat(x,y) * mean(x)
 }
 
 #' @title Simple linear regression analysis
