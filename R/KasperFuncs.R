@@ -121,7 +121,7 @@ varInterval = function(x, alpha = 0.05) {
   return(varInt)
 }
 
-#' @title Confidence interval for one sample
+#' @title One sample confidence interval for the mean
 #' @description Method 3.9 \cr
 #' or do t.test(x, conf.level = 0.95)
 #' @param x Vector of data
