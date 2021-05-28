@@ -121,14 +121,14 @@ varInterval = function(x, alpha = 0.05) {
   return(varInt)
 }
 
-#' @title Confidence interval
+#' @title Confidence interval for one sample
 #' @description Method 3.9 \cr
 #' or do t.test(x, conf.level = 0.95)
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
 #' @return The one sample confidence interval for mean
 #' @export
-confInterval = function(x, alpha = 0.05){
+confInterval = function(x = NULL, alpha = 0.05){
   n = length(x)
   xbar = mean(x)
   s=sd(x)
