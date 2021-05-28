@@ -15,5 +15,6 @@ SSTr(x, treatments)
 The treatment sum of squares
 }
 \description{
-Treatment sum of squares
+Theorem 8.2 \cr
+ANOVA
 }
