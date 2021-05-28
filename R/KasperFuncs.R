@@ -128,7 +128,7 @@ varInterval = function(x, alpha = 0.05) {
 #' @param alpha Significance level (0.05 by default)
 #' @return The one sample confidence interval for mean
 #' @export
-confInterval = function(x = NULL, alpha = 0.05){
+confInterval = function(x, alpha = 0.05){
   n = length(x)
   xbar = mean(x)
   s=sd(x)
