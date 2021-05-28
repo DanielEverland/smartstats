@@ -17,5 +17,6 @@ FBl(x, treatments, blocks)
 The test statistic F for blocks
 }
 \description{
-Block test statistic Ftr
+Theorem 8.22 \cr
+Two-way ANOVA
 }

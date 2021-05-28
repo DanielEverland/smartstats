@@ -273,7 +273,7 @@ SSBl = function(x, treatments, blocks) {
 }
 
 #' @title Treatment sum of squares
-#' @descirption Theorem 8.2 \cr
+#' @description Theorem 8.2 \cr
 #' ANOVA 
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
@@ -369,7 +369,7 @@ FTr = function(x, treatments, blocks) {
 }
 
 #' @title Block test statistic Ftr
-#' @descritpion Theorem 8.22 \cr
+#' @description Theorem 8.22 \cr
 #' Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
@@ -408,7 +408,7 @@ pvalBl = function(x, treatments, blocks) {
 
 
 #' @title Post Hoc pairwise confidence interval
-#' @descritpion Method 8.9 \cr
+#' @description Method 8.9 \cr
 #' For One- and Two-way ANOVA
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 

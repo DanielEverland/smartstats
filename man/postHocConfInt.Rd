@@ -30,5 +30,6 @@ postHocConfInt(
 Confidence interval for Post Hoc pairwise comparison
 }
 \description{
-Post Hoc pairwise confidence interval
+Method 8.9 \cr
+For One- and Two-way ANOVA
 }
