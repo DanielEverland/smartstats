@@ -15,5 +15,6 @@ RSS(y, x)
 Sum of the residuals of the linear model lm(y~x) squared
 }
 \description{
-Input makes a simple linear model lm(y~x)
+Input makes a simple linear model lm(y~x) \cr
+Equation 5-8
 }

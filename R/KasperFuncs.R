@@ -10,6 +10,7 @@ tobs1 = function(x, mu = 0) {
   val = (mean(x) - mu) / (sd(x) / sqrt(n))
   return(val)
 }
+
 #' @title The one-sample t-test p-value
 #' @description Method 3.23 \cr
 #' or just do t.test(x, conf.level=0.95) :)
@@ -91,7 +92,7 @@ df2 = function(x, y) {
 #' @return The t-test p-value
 #' @export
 pval2 = function(x, y, mu0) {
-  1 - pt(tobs2(x,y, mu0), df2(x,y))
+  2*(1 - pt(tobs2(x,y, mu0), df2(x,y)))
 }
 
 
