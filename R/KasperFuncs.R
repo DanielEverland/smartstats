@@ -1,19 +1,18 @@
 #' Method 3.23
 #' Calculate the one-sample t-test statistic
+#' or just do t.test(x, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param mu mean for the null hypothesis
 #' @return The test statistic t_obs
 #' @export
-#t_obs for 1 sample
 tobs1 = function(x, mu = 0) {
   n = length(x)
   val = (mean(x) - mu) / (sd(x) / sqrt(n))
   return(val)
 }
-
 #' Method 3.23
 #' Calculate the one-sample t-test p-value
-#' or just do t.test(x) :)
+#' or just do t.test(x, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param mu mean for the null hypothesis
 #' @return The t-test p-value
@@ -27,7 +26,7 @@ pval1 = function(x, mu = 0) {
 
 
 #' Method 3.32
-#' reject if |tobs1(x, mu)| > criticalval(x, alpha)
+#' reject null hypothesis if |tobs1(x, mu)| > criticalval(x, alpha)
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
 #' @return The critical value for comparing to the test stastic t_obs
@@ -38,7 +37,7 @@ criticalval = function(x, alpha = 0.05) {
 }
 
 #' Two sample confidence interval for mean1 - mean2
-#' or just use t.test(x,y, conf.level=0.95)
+#' or just use t.test(x,y, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
 #' @param alpha Significance level (0.05 by default)
@@ -54,9 +53,9 @@ confInterval2 = function(x, y, alpha = 0.05) {
   xbar - ybar+c(-1,1)*qt(1-alpha/2, df = df2(x, y))*sqrt((s1/n1)+(s2/n2))
 }
 
-
 #' Method 3.51
 #' Two sample t_obs value
+#' or just use t.test(x,y, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
 #' @param mu0 The null hypothesis mean value
@@ -84,7 +83,7 @@ df2 = function(x, y) {
 }
 
 #' Two sample p-value
-#' or just do t.test(x,y)
+#' or just do t.test(x,y, conf.level = 0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
 #' @param mu0 The null hypothesis mean value
@@ -132,10 +131,10 @@ confInterval = function(x, alpha = 0.05){
   n = length(x)
   xbar = mean(x)
   s=sd(x)
-  c(-1,1)*xbar+(qt(1-alpha/2,n-1)*(s/sqrt(n)))
+  xbar+c(-1,1)*(qt(1-alpha/2,n-1)*(s/sqrt(n)))
 }
 
-#' 0th qauntile
+#' Q0, or the minimum value
 #' @param x Vector of data
 #' @return The minimum
 #' @export
@@ -143,7 +142,7 @@ Q0 = function(x) {
   quantile(x,0, type=2)
 }
 
-#' 25th qauntile
+#' Q1, or the lower quartile
 #' @param x Vector of data
 #' @return The lower quartile Q1
 #' @export
@@ -151,7 +150,7 @@ Q1 = function(x) {
   quantile(x,0.25, type=2)
 }
 
-#' 50th qauntile
+#' Q2, or the median
 #' @param x Vector of data
 #' @return The middle quartile Q2 (or median)
 #' @export
@@ -159,7 +158,7 @@ Q2 = function(x) {
   quantile(x,0.5, type=2)
 }
 
-#' 75th qauntile
+#' Q3, or the upper quartile
 #' @param x Vector of data
 #' @return The upper quartile Q3
 #' @export
@@ -167,7 +166,7 @@ Q3 = function(x) {
   quantile(x,0.75, type=2)
 }
 
-#' 100th qauntile
+#' Q4, or the maximum value
 #' @param x Vector of data
 #' @return The maximum
 #' @export
@@ -182,11 +181,10 @@ Q4 = function(x) {
 #' @export
 Sxx = function(x){
   sum((x-mean(x))^2)
-  #sxx = (length(x)-1)*var(x)
 }
 
 #' Theorem 5.4
-#' Linear regression estimator beta1
+#' Simple linear regression estimator beta1
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The estimator beta1 hat
@@ -196,7 +194,7 @@ beta1hat = function(x, y) {
 }
 
 #' Theorum 5.4
-#' Linear regression estimator beta0
+#' Simple linear regression estimator beta0
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The estimator beta0 hat
@@ -207,18 +205,18 @@ beta0hat = function(x, y) {
 
 #' Making a simple linear regression analysis
 #' y ~ x
-#' @param x Vector of data
 #' @param y Vector of data
+#' @param x Vector of data
 #' @return Summary of the linear model given by y ~ x
 #' @export
 linearAnal = function(y, x) {
-#teehee
+  #teehee
   D = data.frame(x=x, y=y)
   fit = lm(y ~ x, data=D)
   summary(fit)
 }
 
-#Following functions calculate sum of squares for One-way ANOVA
+#Following functions calculate sum of squares for ANOVA
 
 #' Theorem 8.2
 #' One-way ANOVA
@@ -231,21 +229,21 @@ SST = function(x) {
 }
 
 #' Theorem 8.2 and 8.20
-#' One-way ANOVA
+#' One- and Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to (Null if One-way ANOVA)
 #' @return The sum of squared errors
 #' @export
 SSE = function(x, treatments, blocks = NULL) {
-    factor(treatments)
-    numOfGroups = length(unique(treatments))
-    D = data.frame()
-    
+  factor(treatments)
+  numOfGroups = length(unique(treatments))
+  D = data.frame()
+  
   if (is.null(blocks)) {
     muis = tapply(x, treatments, mean)
     for (i in 1:numOfGroups) {
-        D = rbind(D, sum((x[treatments==i]-muis[i])^2))
+      D = rbind(D, sum((x[treatments==i]-muis[i])^2))
     }
     return(sum(D))
   }
@@ -275,9 +273,9 @@ SSBl = function(x, treatments, blocks) {
 }
 
 #' Theorem 8.2
-#' One-way ANOVA
+#' ANOVA - treatment sum of squares
 #' @param x Vector of all data from all groups
-#' @param treatments Vector with pointers for which group each entry in x belong to
+#' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The treatment sum of squares
 #' @export
 SSTr = function(x, treatments) {
@@ -290,10 +288,9 @@ SSTr = function(x, treatments) {
   sum(numOfObsGroup*alpha^2)
 }
 
-
-#' One-way ANOVA
+#' ANOVA - mean treatment sum of squares
 #' @param x Vector of all data from all groups
-#' @param treatments Vector with pointers for which group each entry in x belong to.
+#' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The mean treatment sum of squares
 #' @export
 MSTr = function(x, treatments) {
@@ -302,14 +299,15 @@ MSTr = function(x, treatments) {
 }
 
 #' One- and Two-way ANOVA
+#' Mean residual sum of squares (errors)
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to (Null if One-way ANOVA)
-#' @return The mean sum of squares
+#' @return The mean sum of square errors
 #' @export
 MSE = function(x, treatments, blocks = NULL) {
-    numOfGroups = length(unique(treatments))
-    n = length(x)
+  numOfGroups = length(unique(treatments))
+  n = length(x)
   if (is.null(blocks)) {
     SSE(x, treatments)/(n-numOfGroups)
   }
@@ -321,6 +319,13 @@ MSE = function(x, treatments, blocks = NULL) {
   }
 }
 
+#' Two-way ANOVA
+#' Mean block sum of squares
+#' @param x Vector of all data from all groups
+#' @param treatments Vector with pointers for which group each entry in x belong to. 
+#' @param blocks Vector with pointers for which block each entry in x belong to (Null if One-way ANOVA)
+#' @return The mean block sum of squares
+#' @export
 MSBl = function(x, treatments, blocks) {
   numOfBlocks = length(unique(blocks))
   SSBl(x, treatments, blocks)/(numOfBlocks-1)
@@ -339,7 +344,7 @@ Fobs = function(x, treatments) {
 
 #' Calculate the p-value for One-way ANOVA
 #' @param x Vector of all data from all groups
-#' @param treatments Vector with pointers for which group each entry in x belong to.
+#' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The test p-value
 #' @export
 pvalANOVA = function(x, treatments) {
@@ -424,7 +429,7 @@ postHocConfInt = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL
 
 
 #' Method 8.10
-#' Post hoc pairwise hypothesis test t-value for One-way ANOVA
+#' Post hoc pairwise hypothesis test t-value for One- and Two-way ANOVA
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param groupIndex1 Index of group to compare
@@ -447,7 +452,7 @@ tobsPostHoc = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL, a
 }
 
 #' Method 8.10
-#' Post hoc pairwise hypothesis test p-value for One-way ANOVA
+#' Post hoc pairwise hypothesis test p-value for One- and Two-way ANOVA
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param groupIndex1 Index of group to compare
@@ -457,9 +462,9 @@ tobsPostHoc = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL, a
 #' @export
 pvalPostHoc = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL, alpha = 0.05) {
   if(is.null(blocks)) {
-  n = length(x)
-  tobs = tobsPostHoc(x, treatments, groupIndex1, groupIndex2, alpha)
-  2*(1-pt(abs(tobs), n - numOfGroups))
+    n = length(x)
+    tobs = tobsPostHoc(x, treatments, groupIndex1, groupIndex2, alpha)
+    2*(1-pt(abs(tobs), n - numOfGroups))
   }
   else {
     numOfBlocks = length(unique(blocks))
@@ -493,7 +498,8 @@ wally = function(x, range1, range2) {
     stdy <- (y-mean(y))/sd(y)
     qqnorm(stdy, main="", ...)
     qqline(stdy)
-    }
+  }
   wallyplot(x, FUN=qqwrap, ylim=c(range1,range2))
   
 }
+
