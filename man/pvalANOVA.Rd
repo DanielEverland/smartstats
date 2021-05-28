@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pvalANOVA}
 \alias{pvalANOVA}
-\title{Calculate the p-value for One-way ANOVA}
+\title{Calculate the p-value}
 \usage{
 pvalANOVA(x, treatments)
 }
@@ -15,5 +15,5 @@ pvalANOVA(x, treatments)
 The test p-value
 }
 \description{
-Calculate the p-value for One-way ANOVA
+For One-way ANOVA
 }

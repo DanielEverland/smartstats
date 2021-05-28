@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pval2}
 \alias{pval2}
-\title{Two sample p-value
-or just do t.test(x,y)}
+\title{Two sample p-value}
 \usage{
 pval2(x, y, mu0)
 }
@@ -18,6 +17,5 @@ pval2(x, y, mu0)
 The t-test p-value
 }
 \description{
-Two sample p-value
-or just do t.test(x,y)
+or just do t.test(x,y, conf.level = 0.95) :)
 }

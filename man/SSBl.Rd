@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{SSBl}
 \alias{SSBl}
-\title{Theorem 8.20
-Two-way ANOVA}
+\title{Block sum of squares}
 \usage{
 SSBl(x, treatments, blocks)
 }
@@ -18,6 +17,6 @@ SSBl(x, treatments, blocks)
 The block sum of squared
 }
 \description{
-Theorem 8.20
+Theorem 8.20 \cr
 Two-way ANOVA
 }

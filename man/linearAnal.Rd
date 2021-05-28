@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{linearAnal}
 \alias{linearAnal}
-\title{Making a simple linear regression analysis
-y ~ x}
+\title{Simple linear regression analysis}
 \usage{
 linearAnal(y, x)
 }
@@ -16,6 +15,5 @@ linearAnal(y, x)
 Summary of the linear model given by y ~ x
 }
 \description{
-Making a simple linear regression analysis
-y ~ x
+Linear model based on y ~ x
 }

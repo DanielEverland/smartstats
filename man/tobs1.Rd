@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{tobs1}
 \alias{tobs1}
-\title{Method 3.23
-Calculate the one-sample t-test statistic}
+\title{The one-sample t-test statistic}
 \usage{
 tobs1(x, mu = 0)
 }
@@ -16,6 +15,6 @@ tobs1(x, mu = 0)
 The test statistic t_obs
 }
 \description{
-Method 3.23
-Calculate the one-sample t-test statistic
+Method 3.23 \cr
+or just do t.test(x, conf.level=0.95) :)
 }

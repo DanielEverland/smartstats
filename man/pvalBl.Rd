@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pvalBl}
 \alias{pvalBl}
-\title{Calculating p-value for blocks in Two-way ANOVA}
+\title{Calculating p-value for blocks}
 \usage{
 pvalBl(x, treatments, blocks)
 }
@@ -17,5 +17,5 @@ pvalBl(x, treatments, blocks)
 The p-value for blocks
 }
 \description{
-Calculating p-value for blocks in Two-way ANOVA
+For Two-way ANOVA
 }

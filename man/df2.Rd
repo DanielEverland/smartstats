@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{df2}
 \alias{df2}
-\title{Method 3.51
-Two sample degrees of freedom}
+\title{Two sample degrees of freedom}
 \usage{
 df2(x, y)
 }
@@ -17,5 +16,4 @@ The v degrees of freedom for two sample
 }
 \description{
 Method 3.51
-Two sample degrees of freedom
 }

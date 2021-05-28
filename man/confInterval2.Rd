@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{confInterval2}
 \alias{confInterval2}
-\title{Two sample confidence interval for mean1 - mean2
-or just use t.test(x,y, conf.level=0.95)}
+\title{Two sample confidence interval for mean1 - mean2}
 \usage{
 confInterval2(x, y, alpha = 0.05)
 }
@@ -18,6 +17,5 @@ confInterval2(x, y, alpha = 0.05)
 Confidence interval for the difference in mean of x and y with significance level alpha
 }
 \description{
-Two sample confidence interval for mean1 - mean2
-or just use t.test(x,y, conf.level=0.95)
+or just use t.test(x,y, conf.level=0.95) :)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Q2}
 \alias{Q2}
-\title{50th qauntile}
+\title{Q2, or the median}
 \usage{
 Q2(x)
 }
@@ -13,5 +13,5 @@ Q2(x)
 The middle quartile Q2 (or median)
 }
 \description{
-50th qauntile
+Q2, or the median
 }

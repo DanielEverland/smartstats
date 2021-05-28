@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{tobs2}
 \alias{tobs2}
-\title{Method 3.51
-Two sample t_obs value}
+\title{Two sample t_obs value}
 \usage{
 tobs2(x, y, mu0 = 0)
 }
@@ -18,6 +17,6 @@ tobs2(x, y, mu0 = 0)
 The test statistic t_obs for two sample t-test
 }
 \description{
-Method 3.51
-Two sample t_obs value
+Method 3.51 \cr
+or just use t.test(x,y, conf.level=0.95) :)
 }

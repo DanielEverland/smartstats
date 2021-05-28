@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{postHocConfInt}
 \alias{postHocConfInt}
-\title{Method 8.9
-Post Hoc pairwise confidence interval for One- and Two-way ANOVA}
+\title{Post Hoc pairwise confidence interval}
 \usage{
 postHocConfInt(
   x,
@@ -31,6 +30,5 @@ postHocConfInt(
 Confidence interval for Post Hoc pairwise comparison
 }
 \description{
-Method 8.9
-Post Hoc pairwise confidence interval for One- and Two-way ANOVA
+Post Hoc pairwise confidence interval
 }

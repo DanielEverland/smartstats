@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{FBl}
 \alias{FBl}
-\title{Theorem 8.22
-Two-way ANOVA
-Block test statistic Ftr}
+\title{Block test statistic Ftr}
 \usage{
 FBl(x, treatments, blocks)
 }
@@ -19,7 +17,5 @@ FBl(x, treatments, blocks)
 The test statistic F for blocks
 }
 \description{
-Theorem 8.22
-Two-way ANOVA
 Block test statistic Ftr
 }

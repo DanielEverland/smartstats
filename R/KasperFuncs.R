@@ -1,5 +1,5 @@
-#' Method 3.23
-#' Calculate the one-sample t-test statistic
+#' @title The one-sample t-test statistic
+#' @description Method 3.23 \cr
 #' or just do t.test(x, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param mu mean for the null hypothesis
@@ -10,8 +10,8 @@ tobs1 = function(x, mu = 0) {
   val = (mean(x) - mu) / (sd(x) / sqrt(n))
   return(val)
 }
-#' Method 3.23
-#' Calculate the one-sample t-test p-value
+#' @title The one-sample t-test p-value
+#' @description Method 3.23 \cr
 #' or just do t.test(x, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param mu mean for the null hypothesis
@@ -25,7 +25,8 @@ pval1 = function(x, mu = 0) {
 }
 
 
-#' Method 3.32
+#' @title The critical value
+#' @description Method 3.32 \cr
 #' reject null hypothesis if |tobs1(x, mu)| > criticalval(x, alpha)
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
@@ -36,8 +37,8 @@ criticalval = function(x, alpha = 0.05) {
   qt(1-alpha/2, df = n-1)
 }
 
-#' Two sample confidence interval for mean1 - mean2
-#' or just use t.test(x,y, conf.level=0.95) :)
+#' @title Two sample confidence interval for mean1 - mean2
+#' @description or just use t.test(x,y, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
 #' @param alpha Significance level (0.05 by default)
@@ -53,8 +54,8 @@ confInterval2 = function(x, y, alpha = 0.05) {
   xbar - ybar+c(-1,1)*qt(1-alpha/2, df = df2(x, y))*sqrt((s1/n1)+(s2/n2))
 }
 
-#' Method 3.51
-#' Two sample t_obs value
+#' @title Two sample t_obs value
+#' @description Method 3.51 \cr
 #' or just use t.test(x,y, conf.level=0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
@@ -69,8 +70,8 @@ tobs2 = function(x, y, mu0 = 0) {
   return(tobs)
 }
 
-#' Method 3.51
-#' Two sample degrees of freedom
+#' @title Two sample degrees of freedom
+#' @description  Method 3.51
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The v degrees of freedom for two sample
@@ -82,8 +83,8 @@ df2 = function(x, y) {
   return(v)
 }
 
-#' Two sample p-value
-#' or just do t.test(x,y, conf.level = 0.95) :)
+#' @title Two sample p-value
+#' @description or just do t.test(x,y, conf.level = 0.95) :)
 #' @param x Vector of data
 #' @param y Vector of data
 #' @param mu0 The null hypothesis mean value
@@ -94,8 +95,8 @@ pval2 = function(x, y, mu0) {
 }
 
 
-#' Method 3.19
-#' Standard deviation interval
+#' @title Standard deviation interval
+#' @description Method 3.19
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
 #' @return The confidence interval for the standard deviation
@@ -107,13 +108,12 @@ sdInterval = function(x, alpha = 0.05) {
 }
 
 
-#' Method 3.19
-#' Variance interval
+#' @title Variance interval
+#' @description Method 3.19
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
 #' @return The confidence interval for the variation deviation
 #' @export
-sdInterval 
 varInterval = function(x, alpha = 0.05) {
   n = length(x)
   varInt = c((n-1)*var(x)/qchisq(1-alpha/2,n-1),(n-1)*var(x)/qchisq(alpha/2,n-1))
@@ -121,7 +121,8 @@ varInterval = function(x, alpha = 0.05) {
   return(varInt)
 }
 
-#' Method 3.9 
+#' @title Confidence interval
+#' @description Method 3.9 \cr
 #' or do t.test(x, conf.level = 0.95)
 #' @param x Vector of data
 #' @param alpha Significance level (0.05 by default)
@@ -174,8 +175,8 @@ Q4 = function(x) {
   quantile(x,1, type=2)
 }
 
-#' Theorem 5.4
-#' The sample correct sum of squares
+#' @title The sample correct sum of squares
+#' @description Theorem 5.4
 #' @param x Vector of data
 #' @return The sum of squares of the difference between x and its mean
 #' @export
@@ -183,8 +184,8 @@ Sxx = function(x){
   sum((x-mean(x))^2)
 }
 
-#' Theorem 5.4
-#' Simple linear regression estimator beta1
+#' @title Simple linear regression estimator beta1
+#' @description Theorem 5.4
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The estimator beta1 hat
@@ -193,8 +194,8 @@ beta1hat = function(x, y) {
   sum((x - mean(x))*(y - mean(y))) / Sxx(x)
 }
 
-#' Theorum 5.4
-#' Simple linear regression estimator beta0
+#' @title Simple linear regression estimator beta0
+#' @description Theorem 5.4
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The estimator beta0 hat
@@ -203,8 +204,8 @@ beta0hat = function(x, y) {
   mean(y) - b1hat(x,y) * mean(x)
 }
 
-#' Making a simple linear regression analysis
-#' y ~ x
+#' @title Simple linear regression analysis
+#' @description Linear model based on y ~ x
 #' @param y Vector of data
 #' @param x Vector of data
 #' @return Summary of the linear model given by y ~ x
@@ -216,11 +217,8 @@ linearAnal = function(y, x) {
   summary(fit)
 }
 
-#Following functions calculate sum of squares for ANOVA
-
-#' Theorem 8.2
-#' One-way ANOVA
-#' Can also be calculated as SSTr + SSE
+#' @title Total sum of squares
+#' @description Theorem 8.2
 #' @param x Vector of data
 #' @return The total sum of squares
 #' @export
@@ -228,7 +226,8 @@ SST = function(x) {
   sum((x-mean(x))^2)
 }
 
-#' Theorem 8.2 and 8.20
+#' @title Residual sum of squares
+#' @description Theorem 8.2 and 8.20 \cr
 #' One- and Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
@@ -256,7 +255,8 @@ SSE = function(x, treatments, blocks = NULL) {
   }
 }
 
-#' Theorem 8.20
+#' @title Block sum of squares
+#' @description Theorem 8.20 \cr
 #' Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
@@ -272,8 +272,9 @@ SSBl = function(x, treatments, blocks) {
   numOfGroups*sum(beta^2)
 }
 
-#' Theorem 8.2
-#' ANOVA - treatment sum of squares
+#' @title Treatment sum of squares
+#' @descirption Theorem 8.2 \cr
+#' ANOVA 
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The treatment sum of squares
@@ -288,7 +289,8 @@ SSTr = function(x, treatments) {
   sum(numOfObsGroup*alpha^2)
 }
 
-#' ANOVA - mean treatment sum of squares
+#' @title Mean treatment sum of squares
+#' @description ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The mean treatment sum of squares
@@ -298,8 +300,8 @@ MSTr = function(x, treatments) {
   SSTr(x, treatments)/(numOfGroups-1)
 }
 
-#' One- and Two-way ANOVA
-#' Mean residual sum of squares (errors)
+#' @title Mean residual sum of squares (errors)
+#' @description One- and Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to (Null if One-way ANOVA)
@@ -319,8 +321,8 @@ MSE = function(x, treatments, blocks = NULL) {
   }
 }
 
-#' Two-way ANOVA
-#' Mean block sum of squares
+#' @title Mean block sum of squares
+#' @description Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to (Null if One-way ANOVA)
@@ -331,9 +333,9 @@ MSBl = function(x, treatments, blocks) {
   SSBl(x, treatments, blocks)/(numOfBlocks-1)
 }
 
-#' Theorem 8.6
+#' @title Calculate the test statistic F_obs
+#' @description Theorem 8.6 \cr
 #' One-way ANOVA
-#' Calculate the test statistic F_obs
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The test statistic F_obs
@@ -342,7 +344,8 @@ Fobs = function(x, treatments) {
   MSTr(x, treatments)/MSE(x, treatments)
 }
 
-#' Calculate the p-value for One-way ANOVA
+#' @title Calculate the p-value
+#' @description For One-way ANOVA 
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @return The test p-value
@@ -353,9 +356,9 @@ pvalANOVA = function(x, treatments) {
   1- pf(Fobs(x, treatments), df1 = numOfGroups - 1, df2 = n - numOfGroups)
 }
 
-#' Theorem 8.22
+#' @title Treatment test statistic Ftr
+#' @description Theorem 8.22 \cr
 #' Two-way ANOVA
-#' Treatment test statistic Ftr
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to
@@ -365,9 +368,9 @@ FTr = function(x, treatments, blocks) {
   MSTr(x, treatments)/MSE(x, treatments, blocks)
 }
 
-#' Theorem 8.22
+#' @title Block test statistic Ftr
+#' @descritpion Theorem 8.22 \cr
 #' Two-way ANOVA
-#' Block test statistic Ftr
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to
@@ -377,7 +380,8 @@ FBl = function(x, treatments, blocks) {
   MSBl(x, treatments, blocks)/MSE(x, treatments,blocks)
 }
 
-#' Calculating p-value for treatments in Two-way ANOVA
+#' @title Calculating p-value for treatments
+#' @description For Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to
@@ -389,7 +393,8 @@ pvalTr = function(x, treatments, blocks) {
   1 - pf(FTr(x,treatments, blocks), df1 = numOfGroups - 1, df2 = (numOfGroups - 1)*(numOfBlocks - 1))
 }
 
-#' Calculating p-value for blocks in Two-way ANOVA
+#' @title Calculating p-value for blocks
+#' @description For Two-way ANOVA
 #' @param x Vector of all data from all groups
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param blocks Vector with pointers for which block each entry in x belong to
@@ -402,8 +407,9 @@ pvalBl = function(x, treatments, blocks) {
 }
 
 
-#' Method 8.9
-#' Post Hoc pairwise confidence interval for One- and Two-way ANOVA
+#' @title Post Hoc pairwise confidence interval
+#' @descritpion Method 8.9 \cr
+#' For One- and Two-way ANOVA
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param groupIndex1 Index of group to compare
@@ -428,8 +434,9 @@ postHocConfInt = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL
 }
 
 
-#' Method 8.10
-#' Post hoc pairwise hypothesis test t-value for One- and Two-way ANOVA
+#' @title Post hoc pairwise hypothesis test t-value
+#' @description Method 8.10 \cr
+#' For One- and Two-way ANOVA
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param groupIndex1 Index of group to compare
@@ -451,8 +458,8 @@ tobsPostHoc = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL, a
   }
 }
 
-#' Method 8.10
-#' Post hoc pairwise hypothesis test p-value for One- and Two-way ANOVA
+#' @title Post hoc pairwise hypothesis test p-value for One- and Two-way ANOVA
+#' @description Method 8.10
 #' @param x Vector of data
 #' @param treatments Vector with pointers for which group each entry in x belong to. 
 #' @param groupIndex1 Index of group to compare
@@ -474,7 +481,7 @@ pvalPostHoc = function(x, treatments, groupIndex1, groupIndex2, blocks = NULL, a
   }
 }
 
-#' The bonferroni corrected alpha
+#' @title The bonferroni corrected alpha
 #' @param numOfGroups number of groups
 #' @param alpha Significance level (0.05 by default)
 #' @return The bonferroni corrected significance level
@@ -484,9 +491,11 @@ bonferroni = function(numOfGroups, alpha = 0.05) {
   alpha/M
 }
 
-#' Wally plot is a guessing game where your data is compared with 8 normally distributed data.
-#' Pick the data that deviates most from the line, if it is not yours then your data is assumed to be normally distributed
-#' You cannot conclude anything from wallyplot, it is merely a tool
+#' @title Create a wallyplot
+#' @description 
+#' Wally plot is a guessing game where your data is compared with 8 normally distributed data. \cr
+#' Pick the data that deviates most from the line, if it is not yours then your data is assumed to be normally distributed \cr
+#' You cannot conclude anything from wallyplot, it is merely a tool 
 #' @param x Vector of data to plot
 #' @param range1 y-axis plot range lower value
 #' @param range2 y-axis plot range upper value 

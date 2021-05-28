@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pval1}
 \alias{pval1}
-\title{Method 3.23
-Calculate the one-sample t-test p-value
-or just do t.test(x) :)}
+\title{The one-sample t-test p-value}
 \usage{
 pval1(x, mu = 0)
 }
@@ -17,7 +15,6 @@ pval1(x, mu = 0)
 The t-test p-value
 }
 \description{
-Method 3.23
-Calculate the one-sample t-test p-value
-or just do t.test(x) :)
+Method 3.23 \cr
+or just do t.test(x, conf.level=0.95) :)
 }

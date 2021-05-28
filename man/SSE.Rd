@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{SSE}
 \alias{SSE}
-\title{Theorem 8.2 and 8.20
-One-way ANOVA}
+\title{Residual sum of squares}
 \usage{
 SSE(x, treatments, blocks = NULL)
 }
@@ -18,6 +17,6 @@ SSE(x, treatments, blocks = NULL)
 The sum of squared errors
 }
 \description{
-Theorem 8.2 and 8.20
-One-way ANOVA
+Theorem 8.2 and 8.20 \cr
+One- and Two-way ANOVA
 }

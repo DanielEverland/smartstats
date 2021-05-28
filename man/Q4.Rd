@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Q4}
 \alias{Q4}
-\title{100th qauntile}
+\title{Q4, or the maximum value}
 \usage{
 Q4(x)
 }
@@ -13,5 +13,5 @@ Q4(x)
 The maximum
 }
 \description{
-100th qauntile
+Q4, or the maximum value
 }
