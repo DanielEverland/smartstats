@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Fobs}
 \alias{Fobs}
-\title{Theorem 8.6
-One-way ANOVA
-Calculate the test statistic F_obs}
+\title{Calculate the test statistic F_obs}
 \usage{
 Fobs(x, treatments)
 }
@@ -17,7 +15,6 @@ Fobs(x, treatments)
 The test statistic F_obs
 }
 \description{
-Theorem 8.6
+Theorem 8.6 \cr
 One-way ANOVA
-Calculate the test statistic F_obs
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Q0}
 \alias{Q0}
-\title{0th qauntile}
+\title{Q0, or the minimum value}
 \usage{
 Q0(x)
 }
@@ -13,5 +13,5 @@ Q0(x)
 The minimum
 }
 \description{
-0th qauntile
+Q0, or the minimum value
 }

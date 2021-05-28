@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Sxx}
 \alias{Sxx}
-\title{Theorem 5.4
-The sample correct sum of squares}
+\title{The sample correct sum of squares}
 \usage{
 Sxx(x)
 }
@@ -15,5 +14,4 @@ The sum of squares of the difference between x and its mean
 }
 \description{
 Theorem 5.4
-The sample correct sum of squares
 }

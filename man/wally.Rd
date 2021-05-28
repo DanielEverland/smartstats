@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{wally}
 \alias{wally}
-\title{Wally plot is a guessing game where your data is compared with 8 normally distributed data.
-Pick the data that deviates most from the line, if it is not yours then your data is assumed to be normally distributed
-You cannot conclude anything from wallyplot, it is merely a tool}
+\title{Create a wallyplot}
 \usage{
 wally(x, range1, range2)
 }
@@ -19,7 +17,7 @@ wally(x, range1, range2)
 Wallyplot of the data compared with 8 normally distributed data
 }
 \description{
-Wally plot is a guessing game where your data is compared with 8 normally distributed data.
-Pick the data that deviates most from the line, if it is not yours then your data is assumed to be normally distributed
+Wally plot is a guessing game where your data is compared with 8 normally distributed data. \cr
+Pick the data that deviates most from the line, if it is not yours then your data is assumed to be normally distributed \cr
 You cannot conclude anything from wallyplot, it is merely a tool
 }

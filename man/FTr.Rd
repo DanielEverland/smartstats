@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{FTr}
 \alias{FTr}
-\title{Theorem 8.22
-Two-way ANOVA
-Treatment test statistic Ftr}
+\title{Treatment test statistic Ftr}
 \usage{
 FTr(x, treatments, blocks)
 }
@@ -19,7 +17,6 @@ FTr(x, treatments, blocks)
 The test statistic F for treatments
 }
 \description{
-Theorem 8.22
+Theorem 8.22 \cr
 Two-way ANOVA
-Treatment test statistic Ftr
 }

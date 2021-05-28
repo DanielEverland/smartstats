@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{confInterval}
 \alias{confInterval}
-\title{Method 3.9
-or do t.test(x, conf.level = 0.95)}
+\title{Confidence interval}
 \usage{
 confInterval(x, alpha = 0.05)
 }
@@ -16,6 +15,6 @@ confInterval(x, alpha = 0.05)
 The one sample confidence interval for mean
 }
 \description{
-Method 3.9
+Method 3.9 \cr
 or do t.test(x, conf.level = 0.95)
 }

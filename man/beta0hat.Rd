@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{beta0hat}
 \alias{beta0hat}
-\title{Theorum 5.4
-Linear regression estimator beta0}
+\title{Simple linear regression estimator beta0}
 \usage{
 beta0hat(x, y)
 }
@@ -16,6 +15,5 @@ beta0hat(x, y)
 The estimator beta0 hat
 }
 \description{
-Theorum 5.4
-Linear regression estimator beta0
+Theorem 5.4
 }

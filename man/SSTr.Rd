@@ -2,20 +2,18 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{SSTr}
 \alias{SSTr}
-\title{Theorem 8.2
-One-way ANOVA}
+\title{Treatment sum of squares}
 \usage{
 SSTr(x, treatments)
 }
 \arguments{
 \item{x}{Vector of all data from all groups}
 
-\item{treatments}{Vector with pointers for which group each entry in x belong to}
+\item{treatments}{Vector with pointers for which group each entry in x belong to.}
 }
 \value{
 The treatment sum of squares
 }
 \description{
-Theorem 8.2
-One-way ANOVA
+Treatment sum of squares
 }

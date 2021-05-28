@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Q1}
 \alias{Q1}
-\title{25th qauntile}
+\title{Q1, or the lower quartile}
 \usage{
 Q1(x)
 }
@@ -13,5 +13,5 @@ Q1(x)
 The lower quartile Q1
 }
 \description{
-25th qauntile
+Q1, or the lower quartile
 }

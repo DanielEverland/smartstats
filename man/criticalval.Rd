@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{criticalval}
 \alias{criticalval}
-\title{Method 3.32
-reject if |tobs1(x, mu)| > criticalval(x, alpha)}
+\title{The critical value}
 \usage{
 criticalval(x, alpha = 0.05)
 }
@@ -16,6 +15,6 @@ criticalval(x, alpha = 0.05)
 The critical value for comparing to the test stastic t_obs
 }
 \description{
-Method 3.32
-reject if |tobs1(x, mu)| > criticalval(x, alpha)
+Method 3.32 \cr
+reject null hypothesis if |tobs1(x, mu)| > criticalval(x, alpha)
 }

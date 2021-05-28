@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{MSTr}
 \alias{MSTr}
-\title{One-way ANOVA}
+\title{Mean treatment sum of squares}
 \usage{
 MSTr(x, treatments)
 }
@@ -15,5 +15,5 @@ MSTr(x, treatments)
 The mean treatment sum of squares
 }
 \description{
-One-way ANOVA
+ANOVA
 }

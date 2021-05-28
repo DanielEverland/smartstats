@@ -2,9 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{SST}
 \alias{SST}
-\title{Theorem 8.2
-One-way ANOVA
-Can also be calculated as SSTr + SSE}
+\title{Total sum of squares}
 \usage{
 SST(x)
 }
@@ -16,6 +14,4 @@ The total sum of squares
 }
 \description{
 Theorem 8.2
-One-way ANOVA
-Can also be calculated as SSTr + SSE
 }

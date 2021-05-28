@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{Q3}
 \alias{Q3}
-\title{75th qauntile}
+\title{Q3, or the upper quartile}
 \usage{
 Q3(x)
 }
@@ -13,5 +13,5 @@ Q3(x)
 The upper quartile Q3
 }
 \description{
-75th qauntile
+Q3, or the upper quartile
 }

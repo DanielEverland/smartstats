@@ -2,7 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pvalTr}
 \alias{pvalTr}
-\title{Calculating p-value for treatments in Two-way ANOVA}
+\title{Calculating p-value for treatments}
 \usage{
 pvalTr(x, treatments, blocks)
 }
@@ -17,5 +17,5 @@ pvalTr(x, treatments, blocks)
 The p-value for treatments
 }
 \description{
-Calculating p-value for treatments in Two-way ANOVA
+For Two-way ANOVA
 }

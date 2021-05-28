@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{tobsPostHoc}
 \alias{tobsPostHoc}
-\title{Method 8.10
-Post hoc pairwise hypothesis test t-value for One-way ANOVA}
+\title{Post hoc pairwise hypothesis test t-value}
 \usage{
 tobsPostHoc(
   x,
@@ -29,6 +28,6 @@ tobsPostHoc(
 The test statistic t_obs for Post Hoc pairwise hypothesis test
 }
 \description{
-Method 8.10
-Post hoc pairwise hypothesis test t-value for One-way ANOVA
+Method 8.10 \cr
+For One- and Two-way ANOVA
 }

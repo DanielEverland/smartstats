@@ -2,8 +2,7 @@
 % Please edit documentation in R/KasperFuncs.R
 \name{pvalPostHoc}
 \alias{pvalPostHoc}
-\title{Method 8.10
-Post hoc pairwise hypothesis test p-value for One-way ANOVA}
+\title{Post hoc pairwise hypothesis test p-value for One- and Two-way ANOVA}
 \usage{
 pvalPostHoc(
   x,
@@ -30,5 +29,4 @@ The p-value for post hoc pairwise hypothesis test
 }
 \description{
 Method 8.10
-Post hoc pairwise hypothesis test p-value for One-way ANOVA
 }
