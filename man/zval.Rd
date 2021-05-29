@@ -4,7 +4,7 @@
 \alias{zval}
 \title{The Z-distribution value}
 \usage{
-zval(alpha)
+zval(alpha = 0.05)
 }
 \arguments{
 \item{alpha}{Significance level (0.05 by default)}

@@ -4,7 +4,7 @@
 \alias{propConfInt}
 \title{Proportion confidence interval}
 \usage{
-propConfInt(x, n, alpha)
+propConfInt(x, n, alpha = 0.05)
 }
 \arguments{
 \item{x}{Number of observations in a category}

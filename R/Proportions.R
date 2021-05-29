@@ -6,7 +6,7 @@
 #' @param alpha Significance level (0.05 by default)
 #' @return The proportion confidence interval
 #' @export
-propConfInt = function(x, n, alpha) {
+propConfInt = function(x, n, alpha = 0.05) {
   p = x/n
   z = qnorm(1-alpha/2)
   p+c(-1,1)*z*sqrt((p*(1-p))/n)
@@ -17,7 +17,7 @@ propConfInt = function(x, n, alpha) {
 #' @param alpha Significance level (0.05 by default)
 #' @return Z-distribution value
 #' @export
-zval = function(alpha) {
+zval = function(alpha = 0.05) {
   qnorm(1-alpha/2)
 }
 

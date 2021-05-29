@@ -77,6 +77,7 @@ pvalBeta = function(tobs, n) {
 #' @param n length of vector
 #' @param alpha Significance level (0.05 by default)
 #' @return Confidence interval for estimator parameter
+#' @export
 paraConfInt = function(beta, sigmabeta, n, alpha = 0.05) {
   beta + c(-1,1)*qt(1-alpha/2, df = n - 2)*sigmabeta
 }
