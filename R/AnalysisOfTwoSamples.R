@@ -5,18 +5,8 @@
 #' @param n Vector of 2 sample sizes
 #' @return The t-obs value
 #' @export
-tobs2Raw = function(m, v, n) {
+rawTobs2 = function(m, v, n) {
   (m[1]-m[2])/sqrt(v[1]/n[1]+v[2]/n[2])
-}
-
-#' @title Raw dof of two samples
-#' @description Calculates the degrees of freedom for two samples using raw data
-#' @param v Vector of 2 variances
-#' @param n Vector of 2 sample sizes
-#' @return The degrees of freedom
-#' @export
-dof2Raw = function(v, n) {
-  ((v[1]/n[1]+v[2]/n[2])^2)/((v[1]/n[1])^2/(n[1]-1)+(v[2]/n[2])^2/(n[2]-1))
 }
 
 #' @title Raw two sample p-value
@@ -26,7 +16,7 @@ dof2Raw = function(v, n) {
 #' @param n Vector of 2 sample sizes
 #' @return The t-test p-value
 #' @export
-pval2Raw = function(m, v, n) {
+rawPval2 = function(m, v, n) {
   2 * (1- pt(tobs2Raw(m, v, n), dof2Raw(v, n)))
 }
 
@@ -38,7 +28,7 @@ pval2Raw = function(m, v, n) {
 #' @param alpha Significance level (0.05 by default)
 #' @return Confidence interval for the difference in mean of x and y with significance level alpha
 #' @export
-confInterval2Raw = function(m, v, n, alpha = 0.05) {
+rawConfInterval2 = function(m, v, n, alpha = 0.05) {
   xbar = m[1]
   ybar = m[2]
   s1 = v[1]

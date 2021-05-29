@@ -5,6 +5,6 @@
 #' @export
 lsp <- function (package, pattern) {
   package <- deparse(substitute(package))
-  ls(pos = paste("package", package, sep = ":"), 
+  ls(pos = paste("package", package, sep = ":"), all.names = FALSE,
      pattern = pattern)
 }
