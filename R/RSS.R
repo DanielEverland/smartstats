@@ -90,7 +90,7 @@ paraConfInt = function(beta, sigmabeta, n, alpha = 0.05) {
 #' @return Confidence interval for new data 
 #' @export
 confIntLine = function(fit, xnew, alpha = 0.05) {
-  predict(fit, newdata=data.frame(x=xnew), interval="confidence", level=alpha)  
+  predict(fit, newdata=data.frame(x=xnew), interval="confidence", level=1-alpha)  
 }
 
 #' @title Prediction interval for line
@@ -102,7 +102,7 @@ confIntLine = function(fit, xnew, alpha = 0.05) {
 #' @return Prediction interval for new data 
 #' @export
 predIntLine = function(fit, xnew, alpha = 0.05) {
-  predict(fit, newdata=data.frame(x=xnew), interval="prediction", level=alpha)  
+  predict(fit, newdata=data.frame(x=xnew), interval="prediction", level=1-alpha)  
 }
 
 
