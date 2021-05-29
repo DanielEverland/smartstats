@@ -32,6 +32,6 @@ rawME = function(s, n, alpha = 0.05) {
 #' @return The minimum sample size needed for a given margin of error
 #' @export
 sampleSizeME = function(ME, s, alpha = 0.05) {
-  ((dnorm(1-alpha/2)*s)/ME)^2
+  ((qnorm(1-alpha/2)*s)/ME)^2
 }
 
