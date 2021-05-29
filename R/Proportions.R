@@ -11,6 +11,17 @@ propConfInt = function(x, n, alpha = 0.05) {
   z = qnorm(1-alpha/2)
   p+c(-1,1)*z*sqrt((p*(1-p))/n)
 }
+
+#' @title Proportion confidence interval
+#' @description Method 7.3
+#' @param p Proportion given by x/n
+#' @param alpha Significance level (0.05 by default)
+#' @return The proportion confidence interval
+#' @export
+rawPropConfInt = function(p, alpha = 0.05) {
+  z = qnorm(1-alpha/2)
+  p+c(-1,1)*z*sqrt((p*(1-p))/n)
+}
   
 #' @title The Z-distribution value
 #' @description The Z-distribution is a normal distribution with mean zero and standard deviation 1
