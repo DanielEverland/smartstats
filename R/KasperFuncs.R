@@ -76,11 +76,23 @@ tobs2 = function(x, y, mu0 = 0) {
 #' @param x Vector of data
 #' @param y Vector of data
 #' @return The v degrees of freedom for two sample
+#' @export
 df2 = function(x, y) {
-  ms = c(mean(x), mean(y))
   vs = c(var(x), var(y))
   ns = c(length(x), length(y))
   v = ((vs[1]/ns[1]+vs[2]/ns[2])^2)/((vs[1]/ns[1])^2/(ns[1]-1)+(vs[2]/ns[2])^2/(ns[2]-1))
+  return(v)
+}
+
+#' @title Two sample degrees of freedom
+#' @description Method 3.51 \cr
+#' Calculated from given summary statistics
+#' @param v Vector of variance
+#' @param n Vector of length
+#' @return The v degrees of freedom for two sample 
+#' @export
+rawdf2 = function(v, n) {
+  v = ((v[1]/n[1]+v[2]/n[2])^2)/((v[1]/n[1])^2/(n[1]-1)+(v[2]/n[2])^2/(n[2]-1))
   return(v)
 }
 
