@@ -35,5 +35,5 @@ rawConfInterval2 = function(m, v, n, alpha = 0.05) {
   s2 = v[2]
   n1 = n[1]
   n2 = n[2]
-  xbar - ybar+c(-1,1)*qt(1-alpha/2, df = dof2Raw(v, n))*sqrt((s1/n1)+(s2/n2))
+  xbar - ybar+c(-1,1)*qt(1-alpha/2, df = rawdf2(v, n))*sqrt((s1/n1)+(s2/n2))
 }
