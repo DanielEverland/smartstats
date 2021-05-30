@@ -3,10 +3,11 @@
 #' @param m Vector of 2 means
 #' @param v Vector of 2 variances
 #' @param n Vector of 2 sample sizes
+#' @param mu0 The null hypothesis mean value
 #' @return The t-obs value
 #' @export
-rawTobs2 = function(m, v, n) {
-  (m[1]-m[2])/sqrt(v[1]/n[1]+v[2]/n[2])
+rawTobs2 = function(m, v, n, mu0 = 0) {
+  ((m[1]-m[2])-mu0)/sqrt(v[1]/n[1]+v[2]/n[2])
 }
 
 #' @title Raw two sample p-value
